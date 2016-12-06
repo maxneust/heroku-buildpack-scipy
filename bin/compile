@@ -16,9 +16,6 @@ ROOT_DIR=$(dirname $BIN_DIR)
 BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
-ORIG_LD_LIBRARY_PATH=$LD_LIBRARY_PATH
-echo $LD_LIBRARY_PATH
-echo ORIG_LD_LIBRARY_PATH
 
 CACHED_DIRS=".heroku"
 
@@ -218,7 +215,7 @@ set-env PATH '$HOME/.heroku/python/bin:$PATH'
 set-env PYTHONUNBUFFERED true
 set-env PYTHONHOME /app/.heroku/python
 set-env LIBRARY_PATH /app/.heroku/vendor/lib:/app/.heroku/python/lib
-set-env LD_LIBRARY_PATH '/app/.heroku/vendor/lib:/app/.heroku/python/lib:$ORIG_LD_LIBRARY_PATH'
+# set-env LD_LIBRARY_PATH '/app/.heroku/vendor/lib:/app/.heroku/python/lib:$LD_LIBRARY_PATH'
 set-default-env LANG en_US.UTF-8
 set-default-env PYTHONHASHSEED random
 set-default-env PYTHONPATH /app/
